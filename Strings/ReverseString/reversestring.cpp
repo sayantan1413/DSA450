@@ -1,3 +1,9 @@
+/*  Code by Sayantan Bose
+    Time Complexity: O(n)
+    Space Complexity: O(1)
+    Approach used : Two pointer
+*/
+
 #include <bits/stdc++.h>
 using namespace std;
 int main()
