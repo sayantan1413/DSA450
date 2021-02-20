@@ -1,6 +1,6 @@
 /*  Code by Sayantan Bose
     Time Complexity: O(n)
-    Space Complexity: O(n)
+    Space Complexity: O(1)
 */
 
 #include <bits/stdc++.h>
@@ -21,20 +21,12 @@ int main()
         {
             cin >> a[i];
         }
-        int rMax[n], lMax[n], res = 0;
-        lMax[0] = a[0];
+        int res = a[0];
+        int maxEnding = a[0];
         for (int i = 1; i < n; i++)
         {
-            lMax[i] = max(a[i], lMax[i - 1]);
-        }
-        rMax[n - 1] = a[n - 1];
-        for (int i = n - 2; i >= 0; i--)
-        {
-            rMax[i] = max(a[i], rMax[i + 1]);
-        }
-        for (int i = 1; i < n; i++)
-        {
-            res += (min(rMax[i], lMax[i])) - a[i];
+            maxEnding = max(maxEnding + a[i], a[i]);
+            res = max(maxEnding, res);
         }
         cout << res << endl;
     }
