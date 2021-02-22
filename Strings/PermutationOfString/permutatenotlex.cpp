@@ -1,6 +1,7 @@
 /*  Code by Sayantan Bose
     Time Complexity: O(n * n!)
     Space Complexity: O(1)
+    Printed in non-lexclexicographically manner
 */
 #include <bits/stdc++.h>
 using namespace std;
