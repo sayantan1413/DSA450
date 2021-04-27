@@ -5,32 +5,32 @@
 
 #include <bits/stdc++.h>
 using namespace std;
-int main()
+#define fast ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL)
+#define vi vector<int>
+#define rep(i, a, b) for(int i = a; i < b; i++)
+#define rrep(i, a, b) for(int i = b-1; i > a; i--)
+
+void solve()
 {
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
-    cout.tie(NULL);
-    int t;
-    cin >> t;
-    while (t--)
+    int n,i;
+    cin >> n;
+    vi a(n);
+    rep(i, 0, n)
+        cin >> a[i];
+    rrep(i, 0, n)
+        swap(a[i], a[i-1]);
+    rep(i, 0, n)
+        cout << a[i] << " ";
+}
+
+signed main(int argc, char const *argv[])
+{
+    fast;
+    int tc; 
+    cin >> tc;
+    while(tc--)
     {
-        int n;
-        cin >> n;
-        int a[n];
-        for (int i = 0; i < n; i++)
-        {
-            cin >> a[i];
-        }
-        int temp = a[n - 1];
-        for (int i = n - 1; i >= 0; i--)
-        {
-            a[i] = a[i - 1];
-        }
-        a[0] = temp;
-        for (int i = 0; i < n; i++)
-        {
-            cout << a[i] << " ";
-        }
+        solve();
         cout << endl;
     }
     return 0;
